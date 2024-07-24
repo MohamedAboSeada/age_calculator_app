@@ -1,0 +1,220 @@
+/* global rules */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    /* design colors */
+    --Purple: hsl(259, 100%, 65%);
+    --Light-red: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+
+    /* root font-size */
+    font-size: 32px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--Off-white);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    outline: none;
+}
+
+img {
+    width: 100%;
+}
+
+/* app style */
+
+.app {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-color: var(--White);
+    padding: 50px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-bottom-right-radius: 30%;
+}
+
+.app__inputs {
+    display: flex;
+    align-items: center;
+}
+
+.app__input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.app__label {
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    color: var(--Smokey-grey);
+}
+
+.app__input {
+    font-size: 1rem;
+    padding: 10px 15px;
+    font-weight: bold;
+    color: var(--Off-black);
+    outline: none;
+    border: 1px solid var(--Light-grey);
+    border-radius: 5px;
+    width: 180px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    transition: 300ms ease;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -ms-transition: 300ms ease;
+    -o-transition: 300ms ease;
+}
+
+.app__input::placeholder {
+    color: var(--Smokey-grey);
+}
+
+.app__input:hover,
+.app__input:focus {
+    border-color: var(--Purple);
+}
+
+.app__input-error {
+    border-color: var(--Light-red);
+}
+
+.error {
+    color: var(--Light-red);
+}
+
+.app__divider {
+    margin: 30px 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--Light-grey);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.app__calc {
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    background-color: var(--Purple);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: 300ms ease;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -ms-transition: 300ms ease;
+    -o-transition: 300ms ease;
+}
+
+.app__calc:hover {
+    background-color: var(--Off-black);
+}
+
+.app__calc img {
+    width: 70%;
+}
+
+.app__results {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.app__result {
+    font-weight: bold;
+    font-size: 2.5rem;
+    font-style: italic;
+    font-weight: 800;
+    margin-bottom: -30px;
+    color: var(--Off-black);
+}
+
+.placeholder {
+    color: var(--Purple);
+}
+
+.app_error_msg {
+    font-size: 0.5rem;
+    font-style: italic;
+    color: var(--Light-red);
+    transition: 300ms ease;
+    -webkit-transition: 300ms ease;
+    -moz-transition: 300ms ease;
+    -ms-transition: 300ms ease;
+    -o-transition: 300ms ease;
+    text-transform: capitalize;
+}
+
+.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+@media (max-width: 768px) {
+    .app {
+        width: 95%;
+        padding: 50px 20px;
+    }
+
+    .app__input {
+        width: 100px;
+        font-size: 0.6rem;
+    }
+
+    .app_error_msg {
+        font-size: 0.4rem;
+    }
+
+    .app__divider {
+        margin: 50px 0 50px 0;
+        justify-content: center;
+    }
+    .app__results{
+        margin-bottom: 0;
+    }
+    .app__result {
+        font-size: 1.7rem;
+        margin-bottom: -10px;
+    }
+}
